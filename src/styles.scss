@@ -1,2 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.container{
+  margin: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "main main main side";
+
+  > div{
+    padding: 10px;
+  }
+}
+.main{
+  grid-area: main;
+  background-color: blue;
+}
+.side{
+  grid-area: side;
+  background-color: red;
+}
+.flex{
+  display: flex !important;
+}
+
+.mat-card-header, .mat-card-actions{
+  &.center{
+    justify-content: center;
+  }
+}
+.mat-card-content{
+  &.center{
+    text-align: center;
+  }
+}
