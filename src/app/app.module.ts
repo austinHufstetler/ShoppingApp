@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductComponent } from './product/product.component';
 import { PageProductComponent } from './page-product/page-product.component';
+import { ProductOptionsComponent } from './product-options/product-options.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { PageProductComponent } from './page-product/page-product.component';
     AppComponent,
     TopBarComponent,
     ProductComponent,
-    PageProductComponent
+    PageProductComponent,
+    ProductOptionsComponent
   ],
   imports: [
     BrowserModule,
