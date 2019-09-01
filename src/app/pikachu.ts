@@ -1,37 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Card } from './models/card';
 
-@Component({
-  selector: 'app-product-options',
-  templateUrl: './product-options.component.html',
-  styleUrls: ['./product-options.component.scss']
-})
-export class ProductOptionsComponent implements OnInit {
-  quantities: number[] = [...Array(31).keys()];
-
-  constructor() {
-    /* DON"T USE THIS JUST FOR REFERENCE
-    if(this.card.rarity === 'Common'){
-      this.price = 1.00;
-      this._price = this.price.toFixed(2);
-    }
-    */
-  }
-
-  ngOnInit() {
-  }
-
-  /* TRASH
-  price: number;
-  _price: string;
-
-  card =  {
+export const Pikachu: Card =  {
     "id": "base6-86",
     "name": "Pikachu",
     "nationalPokedexNumber": 25,
     "imageUrl": "https://images.pokemontcg.io/base6/86.png",
     "imageUrlHiRes": "https://images.pokemontcg.io/base6/86_hires.png",
     "types": [
-      "Lightning"
+      "Lightning",
+      "Flying"
     ],
     "supertype": "Pokémon",
     "subtype": "Basic",
@@ -64,8 +41,4 @@ export class ProductOptionsComponent implements OnInit {
         "value": "×2"
       }
     ]
-  } */
-
-
-
-}
+  }
