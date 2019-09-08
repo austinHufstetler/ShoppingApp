@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { faImages } from '@fortawesome/free-solid-svg-icons';
-import { CardService } from '../card.service';
-import { Card } from '../models/card';
-import { Pikachu } from '../pikachu';
+import { SearchService } from '../search.service';
+import { Card } from '../interfaces/card';
 import { getLocaleExtraDayPeriodRules } from '@angular/common';
+import { ProductService } from './product.service';
+
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -11,16 +13,23 @@ import { getLocaleExtraDayPeriodRules } from '@angular/common';
 })
 export class ProductComponent implements OnInit {
   joey = faImages;
-  card: Card;
+  card: any;
 
-  constructor(private cardService: CardService) { }
+  constructor(private productService: ProductService, private searchService: SearchService) { }
 
-  getCard(): void {
-    this.card = this.cardService.getCard();
+
+  getCard(searchTerm): void {
+    this.searchService.getCard(searchTerm).subscribe({
+      next: data => this.card = data.card,
+      error: err => console.error('Observer got an error: ' + err),
+      complete: () => console.log('Observer got a complete notification'),
+    });
   }
 
   ngOnInit() {
-    this.getCard();
+    this.productService.change.subscribe(searchTerm => {
+      this.getCard(searchTerm);
+    })
   }
 
 }
