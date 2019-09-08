@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
 import { ProductService } from '../product/product.service';
 
 @Component({
@@ -8,14 +8,27 @@ import { ProductService } from '../product/product.service';
 })
 export class SearchComponent implements OnInit {
   value = 'Clear me';
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private elementRef:ElementRef) { }
 
   ngOnInit() {
   }
 
-  @HostListener('keyup', ['$event.target.id']) onkeyup(id: string){
+
+  @HostListener("keyup", ['$event.target.id']) onkeyup(id: string){
     if(id !== 'card-search'){ return }
     this.productService.changeCard(this.value);
   }
+
+  ngAfterViewInit() {
+    /*
+    this.elementRef.nativeElement.querySelector('#card-search')
+                                  .addEventListener('keyup', this.onKeyUpAlt.bind(this)); */
+  }
+
+  /*
+  onKeyUpAlt() {
+    this.productService.changeCard(this.value);
+  }
+  */
 
 }
