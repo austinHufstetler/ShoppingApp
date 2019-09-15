@@ -22,6 +22,11 @@ export interface Card {
   }
 }
 
+
+export interface CardResponse {
+  cards: Card[]
+}
+
 export interface Attack {
   cost:                string[];
   name:                string;

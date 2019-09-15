@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Card, Attack, Weakness } from './interfaces/card';
+import { Card,  Attack, Weakness, CardResponse } from './interfaces/card';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +14,12 @@ export class SearchService {
   }
 
   getCardsByName(cardName){
-    return this.http.get<Card[]>(`https://api.pokemontcg.io/v1/cards?name=${cardName}`);
+    return this.http.get<CardResponse>(`https://api.pokemontcg.io/v1/cards?name=${cardName}`);
   }
 
   getSet(setId){
-    return this.http.get(`https://api.pokemontcg.io/v1/sets/${setId}`);
+    return this.http.get<CardResponse>(`https://api.pokemontcg.io/v1/cards?setCode=${setId}`);
   }
+
 
 }
