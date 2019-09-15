@@ -17,4 +17,8 @@ export class SearchService {
     return this.http.get<Card[]>(`https://api.pokemontcg.io/v1/cards?name=${cardName}`);
   }
 
+  getSet(setId){
+    return this.http.get(`https://api.pokemontcg.io/v1/sets/${setId}`);
+  }
+
 }

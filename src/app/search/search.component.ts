@@ -7,7 +7,7 @@ import { ProductService } from '../product/product.service';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-  value = 'Clear me';
+  value = '';
   constructor(private productService: ProductService, private elementRef:ElementRef) { }
 
   ngOnInit() {
@@ -22,7 +22,7 @@ export class SearchComponent implements OnInit {
   ngAfterViewInit() {
     /*
     this.elementRef.nativeElement.querySelector('#card-search')
-                                  .addEventListener('keyup', this.onKeyUpAlt.bind(this)); */
+        .addEventListener('keyup', this.onKeyUpAlt.bind(this)); */
   }
 
   /*
