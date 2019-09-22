@@ -20,7 +20,7 @@ export class ProductComponent implements OnInit {
 
   getCard(searchTerm): void {
     this.searchService.getCard(searchTerm).subscribe({
-      next: data => this.card = data.card,
+      next: data => this.card = data,
       error: err => console.error('Observer got an error: ' + err),
       complete: () => console.log('Observer got a complete notification'),
     });

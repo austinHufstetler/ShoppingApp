@@ -1,5 +1,4 @@
 export interface Card {
-  card: {
     id:                    string;
     name:                  string;
     nationalPokedexNumber: number;
@@ -19,7 +18,6 @@ export interface Card {
     setCode:               string;
     attacks:               Attack[];
     weaknesses:            Weakness[];
-  }
 }
 
 
