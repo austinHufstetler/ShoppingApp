@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
-import { CardResponse, Card} from '../interfaces/Card'
+import { CardResponse, Card} from '../interfaces/card'
 import { Observable } from 'rxjs';
 
 @Component({
