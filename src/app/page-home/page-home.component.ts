@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService } from '../search.service';
-import { CardResponse, Card} from '../interfaces/Card'
+import { CardResponse, Card} from '../interfaces/card'
 import { Observable } from 'rxjs';
 
 @Component({
@@ -34,7 +34,7 @@ export class PageHomeComponent implements OnInit {
     )
   }
 
-  
+
   limitList(list: Card[], limit: number){
     return list.slice(0, limit);
   }

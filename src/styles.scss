@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-.container{
+.container--3-1{
   margin: 0 20px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -22,6 +22,40 @@
 }
 .flex{
   display: flex !important;
+}
+
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+
+  &__item{
+    margin: 10px;
+    img{
+      width: 100%;
+    }
+  }
+}
+
+.card{
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), 0 0 3px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  font-size: 0;
+  transition: transform .2s ease-in, box-shadow .2s ease-in;
+  transform: translate3d(0, 0, 0);
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15), 0 0 15px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px);
+    text-decoration: none;
+ }
+
 }
 
 .mat-card-header, .mat-card-actions{
