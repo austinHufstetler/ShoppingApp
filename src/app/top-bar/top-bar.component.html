@@ -1,5 +1,8 @@
 <mat-toolbar>
-  <h2>{{name}}</h2>
+  <div>
+      <h2 class="inline">{{name}}</h2>
+      <fa-icon [icon]="home" class="cursor--pointer inline" [routerLink]="'/'"></fa-icon>
+  </div>
   <app-search></app-search>
   <fa-icon [icon]="cart"></fa-icon>
 </mat-toolbar>

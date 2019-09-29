@@ -1,5 +1,5 @@
 <mat-form-field class="example-form-field">
-  <input matInput id="card-search" type="text"  [(ngModel)]="searchTerm">
+  <input matInput id="card-search" type="text"  [(ngModel)]="searchTerm" (keydown.enter)="goToSearchResults(searchTerm)"> 
   <mat-icon>x</mat-icon>
   <button mat-button *ngIf="searchTerm" matSuffix mat-icon-button aria-label="Clear" (click)="searchTerm=''">
   </button>
