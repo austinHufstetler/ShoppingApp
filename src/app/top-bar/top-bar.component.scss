@@ -1,4 +1,11 @@
 .mat-toolbar{
   display: flex;
   justify-content: space-between;
+
+  .inline{
+    display: inline;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+
 }
