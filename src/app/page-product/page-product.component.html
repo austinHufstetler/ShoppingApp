@@ -1,8 +1,10 @@
+<div *ngIf="cardResult$ | async as cardResult">
 <div class="container--3-1">
   <div class="main">
-      <app-product> </app-product>
+    <app-product [card]="cardResult.card"></app-product>
   </div>
   <div class="side">
       <app-product-options></app-product-options>
   </div>
+</div>
 </div>

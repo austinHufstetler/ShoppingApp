@@ -1,5 +1,7 @@
 <div *ngIf="searchResult$ | async as searchResult">
     <ul class="clean-list flex">
-      <li class="flex__item card" *ngFor="let card of searchResult.cards"><img class="card-img" src="{{ card.imageUrl }}"></li>
+      <li class="flex__item card" *ngFor="let card of searchResult.cards">
+        <a routerLink="/product/{{card.id}}"><img class="card-img" src="{{ card.imageUrl }}"></a>
+      </li>
     </ul>
 </div>

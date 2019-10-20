@@ -8,7 +8,7 @@ import { PageHomeComponent } from './page-home/page-home.component';
 const routes: Routes = [
   { path: '', component: PageHomeComponent},
   { path: 'search', component: PageSearchResultsComponent },
-  { path: 'product', component: PageProductComponent }
+  { path: 'product/:id', component: PageProductComponent },
 ];
 
 @NgModule({
